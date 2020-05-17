@@ -1,0 +1,33 @@
+
+spring:
+  datasource:
+    type: org.apache.commons.dbcp.BasicDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cmfw
+    username: root
+    password: root
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 100MB
+
+  redis:
+    host: 192.168.249.166:9300
+    port: 6379
+    database: 1
+
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.249.166:9300
+
+server:
+  port: 8089
+  servlet:
+    context-path: /cmfw
+    jsp:
+      init-parameters:
+        development: true
